@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class StartUI : MonoBehaviour
 {
-    public bool started;
     public bool active = true;
     private UIAnimation[] _anims;
     private List<GameObject> _animationObj = new List<GameObject>();
@@ -33,7 +32,7 @@ public class StartUI : MonoBehaviour
 
     void Update()
     {
-        if(!started) return;
+        if(!Manager.instance.started) return;
 
         _timeElapsed += Time.deltaTime;
 
@@ -60,12 +59,14 @@ public class StartUI : MonoBehaviour
     {
         DisableAnims();
         Manager.instance.camController.enabled = true;
+        Manager.instance.selectionManager.enabled = true;
     }
 
     public void Activate()
     {
         EnableAnims();
         Manager.instance.camController.enabled = false;
+        Manager.instance.selectionManager.enabled = false;
     }
 
     private void EnableAnims()

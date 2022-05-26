@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     public float rotationAmount;
     public Vector3 zoomAmount;
 
-    private Camera _mainCam;
+    [HideInInspector] public Camera mainCam;
     private Transform _thisTransform;
     private Vector3 _newPosition;
     private Quaternion _newRotation;
@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
 
     void Awake()
     {
-        _mainCam = mainCamera.GetComponent<Camera>();
+        mainCam = mainCamera.GetComponent<Camera>();
         _thisTransform = transform;
     }
 

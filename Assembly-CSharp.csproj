@@ -56,20 +56,21 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\Scripts\Ring.cs" />
-    <Compile Include="Assets\Scripts\Peg.cs" />
-    <Compile Include="Assets\Scripts\Stand.cs" />
-    <Compile Include="Assets\Scripts\Entity.cs" />
-    <Compile Include="Assets\Scripts\UI\UIAnimation.cs" />
-    <Compile Include="Assets\Scripts\UI\UIMove.cs" />
-    <Compile Include="Assets\Scripts\UI\ObjectAnimation.cs" />
-    <Compile Include="Assets\Scripts\UI\ObjectScale.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
-    <Compile Include="Assets\Scripts\UI\UIScale.cs" />
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\UI\RingCountUI.cs" />
+    <Compile Include="Assets\Scripts\Ring.cs" />
+    <Compile Include="Assets\Scripts\Stand.cs" />
+    <Compile Include="Assets\Scripts\UI\UIScale.cs" />
+    <Compile Include="Assets\Scripts\Entity.cs" />
+    <Compile Include="Assets\Scripts\UI\UIMove.cs" />
+    <Compile Include="Assets\Scripts\Peg.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\UI\StartUI.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAnimation.cs" />
+    <Compile Include="Assets\Scripts\UI\ObjectAnimation.cs" />
+    <Compile Include="Assets\Scripts\UI\ObjectScale.cs" />
+    <Compile Include="Assets\Scripts\EntitySelectionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Misc\TextMesh Pro\Shaders\TMPro.cginc" />

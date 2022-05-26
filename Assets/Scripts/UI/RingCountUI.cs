@@ -34,6 +34,6 @@ public class RingCountUI : MonoBehaviour
         startUi.active = true;
         startUi.Deactivate();
         uiAnimation.Disable();
-        startUi.started = true;
+        Manager.instance.started = true;
     }
 }

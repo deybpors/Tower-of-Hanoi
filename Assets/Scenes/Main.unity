@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 343021340}
   - component: {fileID: 343021341}
+  - component: {fileID: 343021342}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -167,8 +168,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e88a41c2101534bac9d3c8bb2206bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  started: 0
+  ringCount: 0
+  selectionManager: {fileID: 343021342}
   stand: {fileID: 458915160}
   camController: {fileID: 1754470881}
+--- !u!114 &343021342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343021339}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94a566632995d5f45a7e287531f54d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightMaterial: {fileID: 2100000, guid: beb44cc9fad6aae43a4dbba83e501f7f, type: 2}
+  selected: {fileID: 0}
 --- !u!1 &458915155
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +227,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8f0da0c3db67a7743863d5a5d311c280, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -282,10 +300,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e87bc6c7d998b545b372e1a5bbe94c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 458915156}
+  entityObject: {fileID: 0}
+  entityTransform: {fileID: 0}
   pegs:
   - {fileID: 1757894271}
   - {fileID: 3895056558258253672}
   - {fileID: 1614285096}
+  ringMaterials:
+  - {fileID: 2100000, guid: b1703913ab0600e49b2cb8569d7ef187, type: 2}
+  - {fileID: 2100000, guid: 016e566cb21133343b981d8bbb2f3994, type: 2}
+  - {fileID: 2100000, guid: 3b746139a0bc98945bd02ad9d8ebf65a, type: 2}
+  - {fileID: 2100000, guid: 631b727d23c9b454d952beac9a5a6445, type: 2}
+  - {fileID: 2100000, guid: 64e61ae2727ab394c888cc7d8e83d634, type: 2}
+  - {fileID: 2100000, guid: 4a8fe06f1612d2e4cacbcc712d493d2f, type: 2}
+  - {fileID: 2100000, guid: b423af6ebee46334e8c6934c3f1dfecf, type: 2}
+  - {fileID: 2100000, guid: c412f12ea9e58854aaea35ec6f08df19, type: 2}
+  - {fileID: 2100000, guid: f6ed6e61c9be7a040b59f823443c8253, type: 2}
+  - {fileID: 2100000, guid: e5cd39603a7cda846809d22d00553a45, type: 2}
   ringOffset: 0.35
   prefab: {fileID: 5752265154448686504, guid: 6921b769c6ffef540a7e9e08b6905579, type: 3}
   ringAnimationDelay: 0.1
@@ -377,10 +409,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895056559255899738, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f0da0c3db67a7743863d5a5d311c280, type: 2}
     - target: {fileID: 3895056559255899740, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
       propertyPath: m_Name
       value: Peg (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6335508109463335617, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: stand
+      value: 
+      objectReference: {fileID: 458915160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
 --- !u!4 &1614285095 stripped
@@ -567,6 +607,7 @@ MonoBehaviour:
   movementTime: 2
   rotationAmount: 0.5
   zoomAmount: {x: 0, y: -0.05, z: 0.05}
+  mainCam: {fileID: 0}
 --- !u!1001 &1757894269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -618,10 +659,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895056559255899738, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f0da0c3db67a7743863d5a5d311c280, type: 2}
     - target: {fileID: 3895056559255899740, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
       propertyPath: m_Name
       value: Peg (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6335508109463335617, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: stand
+      value: 
+      objectReference: {fileID: 458915160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
 --- !u!4 &1757894270 stripped
@@ -806,10 +855,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895056559255899738, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f0da0c3db67a7743863d5a5d311c280, type: 2}
     - target: {fileID: 3895056559255899740, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
       propertyPath: m_Name
       value: Peg (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6335508109463335617, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
+      propertyPath: stand
+      value: 
+      objectReference: {fileID: 458915160}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}
 --- !u!114 &3895056558258253672 stripped

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Stand : Entity
 {
     public List<Peg> pegs;
+    public List<Material> ringMaterials;
     public float ringOffset;
     public GameObject prefab;
     public float ringAnimationDelay = .25f;
@@ -13,10 +14,10 @@ public class Stand : Entity
     private Dictionary<int, Ring> _ringsDictionary = new Dictionary<int, Ring>();
     private Dictionary<Ring, Transform> _ringTransforms = new Dictionary<Ring, Transform>();
     private Dictionary<GameObject, ObjectAnimation> _ringAnimations = new Dictionary<GameObject, ObjectAnimation>();
-    private HashSet<GameObject> _rings = new HashSet<GameObject>();
+    private HashSet<Material> _ringMat = new HashSet<Material>();
     private readonly Vector3 _zero = Vector3.zero;
 
-    public IEnumerator InitiateRings(int ringsCount)
+    private IEnumerator InitiateRings(int ringsCount)
     {
         for (var i = 0; i < ringsCount; i++)
         {
@@ -31,13 +32,28 @@ public class Stand : Entity
 
             var newScale = SetScale(i, ringTransform);
 
-            pegs[0].rings.Clear();
-            pegs[0].rings.Add(ringValue, ring);
+            HandleRingMaterial(ring);
+
+            pegs[0].rings.Add(ring);
 
             yield return new WaitForSeconds(ringAnimationDelay);
 
             SetAnimation(ringObject, newScale);
         }
+    }
+
+    private void HandleRingMaterial(Entity ring)
+    {
+        var matCount = ringMaterials.Count;
+        Material ringMaterial;
+        do
+        {
+            ringMaterial = ringMaterials[Random.Range(0, matCount)];
+        } 
+        while (_ringMat.Contains(ringMaterial));
+
+        _ringMat.Add(ringMaterial);
+        ring.entityRenderer.material = ringMaterial;
     }
 
     public void RingsInitiate(int ringsCount)
@@ -53,6 +69,10 @@ public class Stand : Entity
             ring.DisableRing();
         }
 
+        Manager.instance.selectionManager.selected = null;
+        Manager.instance.ringCount = ringsCount;
+        Manager.instance.selectionManager.materials.Clear();
+        _ringMat.Clear();
         StartCoroutine(InitiateRings(ringsCount));
     }
 
@@ -62,7 +82,6 @@ public class Stand : Entity
         {
             var obj = Instantiate(prefab, ringsParent);
             ringObject = obj;
-            _rings.Add(obj);
             ring = obj.GetComponent<Ring>();
             ring.value = ringValue;
             _ringsDictionary.Add(ringValue, ring);
@@ -102,8 +121,6 @@ public class Stand : Entity
 
     private void SetPosition(int ringsCount, int ringValue, Transform ringTransform)
     {
-        var newY = pegs[0].start.position.y + ((ringsCount - ringValue) * ringOffset);
-        var newPosition = new Vector3(pegs[0].start.position.x, newY, pegs[0].start.position.z);
-        ringTransform.position = newPosition;
+        ringTransform.position = pegs[0].GetRingPositionInPeg(ringsCount, ringValue);
     }
 }

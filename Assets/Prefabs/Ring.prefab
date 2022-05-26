@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9157176548839768630}
   - component: {fileID: 2862673370482260675}
   - component: {fileID: -8544934531341777269}
+  - component: {fileID: 3177350529358323116}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -46,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e58172fd3fe0cf448f38dbec995d82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 4438185668107838490}
+  currentPeg: {fileID: 0}
   value: 0
 --- !u!114 &-8544934531341777269
 MonoBehaviour:
@@ -54,16 +57,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5752265154448686504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f68c9991f28fb084d8cae4c9f87c0758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.25
+  delay: 0
   transformObject: {fileID: 0}
   useCurrentPositionAsStart: 0
   start: {x: 0, y: 0, z: 0}
   end: {x: 0, y: 0, z: 0}
+--- !u!65 &3177350529358323116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5752265154448686504}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.581355, y: 0.45734373, z: 2.5255008}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7293498512966014708
 GameObject:
   m_ObjectHideFlags: 0
