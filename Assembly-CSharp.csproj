@@ -58,10 +58,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Gameplay\MoveCounter.cs" />
     <Compile Include="Assets\Scripts\Manager\Manager.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\InputManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\ScoreboardUI.cs" />
+    <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\UI\RingCountUI.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreboardRow.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Score.cs" />
+    <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Entities\Ring.cs" />
     <Compile Include="Assets\Scripts\Entities\Stand.cs" />
     <Compile Include="Assets\Scripts\UI\UIScale.cs" />
@@ -70,16 +73,13 @@
     <Compile Include="Assets\Scripts\Manager\EntitySelectionManager.cs" />
     <Compile Include="Assets\Scripts\Entities\Peg.cs" />
     <Compile Include="Assets\Scripts\Gameplay\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Sound\UISoundHover.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Stopwatch.cs" />
     <Compile Include="Assets\Scripts\UI\MenuUI.cs" />
+    <Compile Include="Assets\Scripts\Sound\Audio.cs" />
     <Compile Include="Assets\Scripts\UI\UIAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\ObjectAnimation.cs" />
     <Compile Include="Assets\Scripts\UI\ObjectScale.cs" />
-    <Compile Include="Assets\Scripts\Manager\ScoreManager.cs" />
-    <Compile Include="Assets\Scripts\Gameplay\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Manager\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Sound\Audio.cs" />
-    <Compile Include="Assets\Scripts\Sound\UISoundHover.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Misc\TextMesh Pro\Shaders\TMPro.cginc" />

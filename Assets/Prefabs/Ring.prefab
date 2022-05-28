@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entityRenderer: {fileID: 4438185668107838490}
+  entityObject: {fileID: 0}
+  entityTransform: {fileID: 0}
   currentPeg: {fileID: 0}
   value: 0
 --- !u!114 &-8544934531341777269
@@ -57,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5752265154448686504}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f68c9991f28fb084d8cae4c9f87c0758, type: 3}
   m_Name: 
