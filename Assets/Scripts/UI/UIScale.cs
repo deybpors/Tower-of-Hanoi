@@ -15,6 +15,15 @@ public class UIScale : UIAnimation
 
     void OnEnable()
     {
+        try
+        {
+            Manager.instance.audioManager.PlaySfx(enableSound, true, true);
+        }
+        catch
+        {
+            //ignore
+        }
+
         StopAllCoroutines();
         start = useCurrentScaleAsStart ? uiObject.localScale : start;
         uiObject.localScale = start;
@@ -58,6 +67,7 @@ public class UIScale : UIAnimation
 
     public override void Disable()
     {
+        base.Disable();
         StopAllCoroutines();
         coroutine = StartCoroutine(DisableAnimation());
     }

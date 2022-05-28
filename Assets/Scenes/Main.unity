@@ -134,6 +134,8 @@ GameObject:
   - component: {fileID: 343021340}
   - component: {fileID: 343021341}
   - component: {fileID: 343021342}
+  - component: {fileID: 343021343}
+  - component: {fileID: 343021344}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -152,7 +154,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 842105661}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,10 +172,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   started: 0
-  ringCount: 0
   selectionManager: {fileID: 343021342}
   stand: {fileID: 458915160}
   camController: {fileID: 1754470881}
+  scoreManager: {fileID: 343021343}
+  inputManager: {fileID: 343021344}
+  audioManager: {fileID: 842105662}
+  menuUi: {fileID: 0}
+  ringCount: 0
+  stopwatch: {fileID: 0}
+  moveCounter: {fileID: 0}
+  playerName: 
 --- !u!114 &343021342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +197,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _highlightMaterial: {fileID: 2100000, guid: beb44cc9fad6aae43a4dbba83e501f7f, type: 2}
   selected: {fileID: 0}
+--- !u!114 &343021343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343021339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fedf4d85737a83b4e8c02924f23bfbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreData:
+    scores: []
+--- !u!114 &343021344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343021339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21404efa6f740044b2c33e8b784ab7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForward: 119
+  moveBackward: 115
+  moveLeft: 97
+  moveRight: 100
+  rotateLeft: 113
+  rotateRight: 101
+  zoomIn: 114
+  zoomOut: 102
+  select: 323
 --- !u!1 &458915155
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +367,155 @@ MonoBehaviour:
   prefab: {fileID: 5752265154448686504, guid: 6921b769c6ffef540a7e9e08b6905579, type: 3}
   ringAnimationDelay: 0.1
   ringsParent: {fileID: 1362947337}
+--- !u!1 &842105660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842105661}
+  - component: {fileID: 842105662}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842105661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842105660}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 343021340}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842105662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842105660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa55b24017c54b049803acd1c7383b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterVolume: 1
+  musicVolume: 1
+  sfxVolume: 1
+  fadeTime: 0.25
+  musics:
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e47e102bff244184bac179a0e13d9305, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: c171799a157624a43b6d99ae623aa35c, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: de75a6745964f074fa062b81a62e4cf0, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: dc53e56ab63cc1047b9d70ef49a60ac7, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 3226e1f2b83bcd843b6e9cd541554228, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 3abf284caf937924bb4862880da5d409, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 600a7f13d9da6a046a6f8bfb6ae0c303, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4b58594b44f62d84a86fdf00dc6ed8fd, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 5f7b2c98b572c2a4c8a42f56c85ff6b6, type: 3}
+    volume: 1
+    loop: 0
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e7f465f247705a34fb473e6fc44c88c9, type: 3}
+    volume: 1
+    loop: 0
+  sfx:
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: a4238df53534c014f8a2849b03407c98, type: 3}
+    volume: 0.3
+    defaultPitch: 1
+    minPitch: 0.5
+    maxPitch: 1
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 83c06f09b163c4c4b8fa6f442ef56e32, type: 3}
+    volume: 0.3
+    defaultPitch: 1
+    minPitch: 0.5
+    maxPitch: 1
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4226d3bc84fb75c40897554a69967db1, type: 3}
+    volume: 1
+    defaultPitch: 1
+    minPitch: 1
+    maxPitch: 1.5
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 8ce93c39ee594aa478fdb8bf5a349c88, type: 3}
+    volume: 0.1
+    defaultPitch: 1
+    minPitch: 1
+    maxPitch: 1.5
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: f508453276381ac42a3a75c79ce3caae, type: 3}
+    volume: 0.05
+    defaultPitch: 1
+    minPitch: 1
+    maxPitch: 1.2
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: a38c0920ffc91fc47b6eabec5ace804f, type: 3}
+    volume: 0.2
+    defaultPitch: 1
+    minPitch: 1
+    maxPitch: 1.2
+  - audioName: 
+    source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 4efa5496d132fa24fbfa038da8829852, type: 3}
+    volume: 0.2
+    defaultPitch: 1
+    minPitch: 1
+    maxPitch: 1.2
 --- !u!4 &1166614847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3895056559255899736, guid: 9bdc449be0f149242885cd4c0c9aae8c, type: 3}

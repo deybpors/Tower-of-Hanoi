@@ -62,6 +62,7 @@ public class UIMove : UIAnimation
 
     public override void Disable()
     {
+        base.Disable();
         StopAllCoroutines();
         coroutine = StartCoroutine(DisableAnimation());
     }

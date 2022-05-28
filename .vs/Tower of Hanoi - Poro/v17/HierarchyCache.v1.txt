@@ -12,14 +12,14 @@ i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower 
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\
 ++UI
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\
+++MenuUI.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\menuui.cs
 ++ObjectAnimation.cs
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\objectanimation.cs
 ++ObjectScale.cs
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\objectscale.cs
 ++RingCountUI.cs
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\ringcountui.cs
-++StartUI.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\startui.cs
 ++UIAnimation.cs
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\uianimation.cs
 ++UIMove.cs
@@ -27,21 +27,24 @@ i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower 
 ++UIScale.cs
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\uiscale.cs
 ++CameraController.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\cameracontroller.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\cameracontroller.cs
 ++Entity.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entity.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entities\entity.cs
 ++EntitySelectionManager.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entityselectionmanager.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\manager\entityselectionmanager.cs
 ++Manager.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\manager.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\manager\manager.cs
+++MoveCounter.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\movecounter.cs
 ++Peg.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\peg.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entities\peg.cs
 ++Ring.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ring.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entities\ring.cs
 ++SimpleCameraController.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\simplecameracontroller.cs
 ++Stand.cs
-i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\stand.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entities\stand.cs
+++Stopwatch.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\stopwatch.cs
 ++Microsoft.CSharp
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:
 ++Microsoft.Win32.Primitives
@@ -720,3 +723,17 @@ i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower 
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\misc\textmesh pro\shaders\tmpro_surface.cginc
 ++EmojiOne Attribution.txt
 i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\misc\textmesh pro\sprites\emojione attribution.txt
+++Assembly-CSharp (unloaded)
+++Solution 'Tower of Hanoi - Poro' ‎(0 of 1 project)
+++ScoreboardRow.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\ui\scoreboardrow.cs
+++Score.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\score.cs
+++Scoreboard.cs
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\scoreboard.cs
+++Entities
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\entities\
+++Gameplay
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\gameplay\
+++Manager
+i:{e71cd058-2af4-bbe4-8fb9-5ca376703785}:d:\dave\job application\secret 6\tower of hanoi - poro\assets\scripts\manager\
