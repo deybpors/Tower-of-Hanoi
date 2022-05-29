@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
             var scoreData = _scoreData.scores[i];
             if (scoreData.playerName != score.playerName) continue;
 
+            scoreData.ringCount = score.ringCount;
             scoreData.moves = score.moves;
             scoreData.time = score.time;
             return;
